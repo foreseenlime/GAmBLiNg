@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=f, initial-scale=1.0">
+  <title>High Low</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="scoreBoard-js">
+    $100
+  </div>
+  <div class="playerCard">
+    <p class="playerCardDec">Your Card:</p>
+    <div class="playerCard-js">
+      <img class="Card" src="blankCard.png">
+    </div>
+    
+  </div>
+  <div class="dealerCard">
+    <p class="dealerCardDec">Dealer's Card:</p>
+    <div class="dealerCard-js">
+      <img class="Card" src="blankCard.png">
+    </div>
+  </div>
+  <div>
+    <button class="buttonStart" onclick="pickCard(`player1`); hideElement(`buttonStart`);">Start</button>
+    <button onclick="reset()">Reset</button>
+  </div>
+  <div>
+    <button onclick="gamble(10)">$10</button>
+    <button onclick="gamble(20)">$20</button>
+    <button onclick="gamble(30)">$30</button>
+    <button onclick="gamble(40)">$40</button>
+    <button onclick="gamble(50)">$50</button>
+  </div>
+  <div>
+    <button class="guessButton-js" onclick="guess('higher')">Higher &uarr;</button>
+    <button class="guessButton-js" onclick="guess('lower')">Lower &darr;</button>
+  </div>
+  
+  <script src="script.js"></script>
+</body>
+</html>
