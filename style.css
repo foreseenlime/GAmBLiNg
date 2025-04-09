@@ -57,11 +57,25 @@ body {
   color: white;
 }
 
-
-
 .Card {
   width: 100px;
   border-radius: 10px;
+}
+
+button {
+  width: auto;
+
+  font-size: 30px;
+
+  padding: 5px;
+
+  margin: 10px;
+}
+
+.buttons {
+  width: 100%;
+  display: flex;
+  justify-content: center;
 }
 
 .hide {
