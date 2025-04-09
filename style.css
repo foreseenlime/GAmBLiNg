@@ -1,14 +1,23 @@
 body {
   background-color: rgb(2, 79, 2);
 }
-.playerCardDec, 
-.dealerCardDec {
+
+.scoreBoard-js {
+  margin-left: 10px;
+  border-style: solid;
+  padding:3px;
+  background-color: black;
+  color: white;
+}
+
+.playerCardDec, .dealerCardDec {
   display: inline-block;
 }
-.playerCard,
-.dealerCard {
+
+.playerCard, .dealerCard {
   display: inline-block;
 }
+
 .Card {
   width: 100px;
   border-radius: 10px;
@@ -16,7 +25,8 @@ body {
 
 .hide {
   display: none;
-};
+}
+
 .gameButton {
   color: rgb(255, 0, 0);
   padding: 10px;
