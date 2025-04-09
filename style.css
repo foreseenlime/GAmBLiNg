@@ -9,12 +9,12 @@ body {
 
 .header {
   display: flex;
-  width: 100%;
+  width: 96%;
   justify-content: space-evenly;
   color: white;
 
-  padding: 10px;
-  margin: 10px;
+  padding-inline: 1%;
+  margin-inline: 1%;
 
   border-style: solid;
   border-width: 1px;
@@ -37,7 +37,7 @@ body {
 
 .playerCard, .dealerCard {
   display: inline-block;
-  margin-inline: 10px;
+  margin-inline: 30px;
 }
 
 .name {
