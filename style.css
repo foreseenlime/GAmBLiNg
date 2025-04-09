@@ -6,6 +6,7 @@ body {
   display: flex;
   width: auto;
   justify-content: space-evenly;
+  color: white;
 
   border-style: solid 1px;
   border-radius: 5px;
@@ -19,12 +20,14 @@ body {
 
 .scoreBoard-js {
   width: auto;
-
-  margin-left: 10px;
   padding:3px;
 
   font-size: 50px;
   color: white;
+}
+
+.name {
+  width: 150px;
 }
 
 .playerCardDec, .dealerCardDec {
