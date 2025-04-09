@@ -5,6 +5,7 @@
 
 body {
   background-image: url(gambig-background.png);
+  background-size: cover;
 }
 
 .header {
@@ -12,6 +13,7 @@ body {
   width: 96%;
   justify-content: space-evenly;
   color: white;
+  background-color: black;
 
   padding-inline: 1%;
   padding-top: 5px;
@@ -43,7 +45,7 @@ body {
 
 .name {
   width: 150px;
-	margin-top: 15px;
+  margin-top: 5px;
 }
 
 .cards {
