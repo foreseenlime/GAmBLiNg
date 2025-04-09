@@ -17,9 +17,14 @@ body {
   margin: 10px;
 
   border-style: solid;
-  border-color: black;
   border-width: 1px;
   border-radius: 5px;
+}
+
+.scoreBoard-js {
+  width: auto;
+  font-size: 50px;
+  color: white;
 }
 
 .money {
@@ -30,10 +35,9 @@ body {
   color: white;
 }
 
-.scoreBoard-js {
-  width: auto;
-  font-size: 50px;
-  color: white;
+.playerCard, .dealerCard {
+  display: inline-block;
+  margin-inline: 10px;
 }
 
 .name {
@@ -49,9 +53,7 @@ body {
   display: inline-block;
 }
 
-.playerCard, .dealerCard {
-  display: inline-block;
-}
+
 
 .Card {
   width: 100px;
