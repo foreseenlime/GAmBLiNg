@@ -43,6 +43,7 @@ body {
 
 .name {
   width: 150px;
+	margin-top: 15px;
 }
 
 .cards {
@@ -64,18 +65,20 @@ body {
 
 button {
   width: auto;
-
   font-size: 30px;
-
   padding: 5px;
-
   margin: 10px;
 }
 
 .buttons {
+  margin-top: 20px;
   width: 100%;
+}
+
+.start-btns, .gamble-btns, .guess-btns {
   display: flex;
-  justify-content: center;
+  flex-direction: row;
+	justify-content: center;
 }
 
 .hide {

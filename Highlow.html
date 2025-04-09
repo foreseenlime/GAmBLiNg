@@ -49,13 +49,13 @@
   <div class="buttons">
 
     <!-- start/reset buttons -->
-    <div>
+    <div class="start-btns">
       <button class="buttonStart" onclick="pickCard(`player1`); hideElement(`buttonStart`);">Start</button>
       <button onclick="reset()">Reset</button>
     </div>
 
     <!-- buttons for how much to gamble -->
-    <div>
+    <div class="gamble-btns">
       <button onclick="gamble(10)">$10</button>
       <button onclick="gamble(20)">$20</button>
       <button onclick="gamble(30)">$30</button>
@@ -65,11 +65,11 @@
     </div>
 
     <!-- guess high/low -->
-    <div>
+    <div class="guess-btns">
       <button class="guessButton-js" onclick="guess('higher')">Higher &uarr;</button>
       <button class="guessButton-js" onclick="guess('lower')">Lower &darr;</button>
     </div>
-    
+
   </div>
 
   <script src="script.js"></script>
