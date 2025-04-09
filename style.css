@@ -9,7 +9,7 @@ body {
 
 .header {
   display: flex;
-  width: auto;
+  width: 100%;
   justify-content: space-evenly;
   color: white;
 
@@ -28,7 +28,7 @@ body {
 }
 
 .money {
-  width: 100%;
+  width: auto;
   display: flex;
   flex-direction: column;
   justify-content: center;
