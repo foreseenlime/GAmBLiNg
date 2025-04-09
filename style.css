@@ -4,7 +4,7 @@
 }
 
 body {
-  background-color: rgb(2, 79, 2);
+  background-image: url(gambig-background.png);
 }
 
 .header {
@@ -68,11 +68,22 @@ button {
   font-size: 30px;
   padding: 5px;
   margin: 10px;
+	
+	border-style: solid;
+	border-width: 3px;
+	background-color: rgb(199, 2, 2);
+	border-color: gold;
+	color: white;
+	border-radius: 10px;
 }
 
 .buttons {
   margin-top: 20px;
   width: 100%;
+}
+
+.buttonStart, .buttonReset {
+	font-size: 40px;
 }
 
 .start-btns, .gamble-btns, .guess-btns {
