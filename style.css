@@ -13,6 +13,9 @@ body {
   justify-content: space-evenly;
   color: white;
 
+  padding: 10px;
+  margin: 10px;
+
   border-style: solid;
   border-color: black;
   border-width: 1px;
@@ -33,6 +36,11 @@ body {
 
 .name {
   width: 150px;
+}
+
+.cards {
+  display: flex;
+  justify-content: center;
 }
 
 .playerCardDec, .dealerCardDec {
