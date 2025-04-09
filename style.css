@@ -2,6 +2,15 @@ body {
   background-color: rgb(2, 79, 2);
 }
 
+.header {
+  display: flex;
+  width: auto;
+  justify-content: space-evenly;
+
+  border-style: solid 1px;
+  border-radius: 5px;
+}
+
 .money {
   display: flex;
   flex-direction: column;
@@ -9,16 +18,13 @@ body {
 }
 
 .scoreBoard-js {
-  width: 150px;
+  width: auto;
 
   margin-left: 10px;
   padding:3px;
 
   font-size: 50px;
   color: white;
-
-  border-style: solid black 1px;
-  border-radius: 5px;
 }
 
 .playerCardDec, .dealerCardDec {
