@@ -14,6 +14,8 @@ body {
   color: white;
 
   padding-inline: 1%;
+  padding-top: 5px;
+  padding-bottom: 5px;
   margin-inline: 1%;
 
   border-style: solid;
@@ -32,7 +34,6 @@ body {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  color: white;
 }
 
 .playerCard, .dealerCard {
@@ -47,10 +48,13 @@ body {
 .cards {
   display: flex;
   justify-content: center;
+
+  margin-top: 20px;
 }
 
 .playerCardDec, .dealerCardDec {
   display: inline-block;
+  color: white;
 }
 
 
