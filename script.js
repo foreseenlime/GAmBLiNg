@@ -178,8 +178,8 @@ function incorrectGuess() {
 };
 function gamble(amount) {
   if (amount > 0 && amount <= points) {
-    bet = amount;
-    points -= bet; // Deduct immediately when placing the bet
+    bet += amount;
+    points -= amount; // Deduct immediately when placing the bet
     updateScore();
   } else {
     console.log("Invalid bet amount");
