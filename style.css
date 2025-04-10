@@ -45,7 +45,8 @@ body {
 
 /* div for the dealer + player cards */
 .playerCard, .dealerCard {
-  display: inline-block;
+  display: flex;
+  flex-direction: column;
   margin-inline: 30px;
 }
 
@@ -127,7 +128,7 @@ button {
 
 .dealerCards-js, .playerCards-js {
   display: inline-block;
-  
+
 }
 
 /* BLACKJACK SPECIFIC ELEMENTS END */
