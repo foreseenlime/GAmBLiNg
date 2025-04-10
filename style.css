@@ -99,7 +99,7 @@ button {
 
 /* class that hides an element */
 .hide {
-  display: none;
+  display: none !important;
 }
 
 /* GENERAL ELEMENTS END */
