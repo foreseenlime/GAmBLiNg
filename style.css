@@ -128,7 +128,16 @@ button {
 
 .dealerCards-js, .playerCards-js {
   display: inline-block;
+}
 
+.win-js, .lose-js {
+  color: white;
+}
+
+.dealBJButton-js, .betOpts, .playOpts, .win-js, .lose-js {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
 }
 
 /* BLACKJACK SPECIFIC ELEMENTS END */
