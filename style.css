@@ -123,6 +123,17 @@ button {
 
 
 
+/* BLACKJACK SPECIFIC ELEMENTS */
+
+.dealerCards-js, .playerCards-js {
+  display: inline-block;
+  
+}
+
+/* BLACKJACK SPECIFIC ELEMENTS END */
+
+
+
 /* INDEX ELEMENTS */
 
 /* button for what game to pick in index */
