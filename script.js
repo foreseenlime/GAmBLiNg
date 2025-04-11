@@ -7,7 +7,7 @@ let playerCardsBJ = [{card:"Blank", value: 1, suit: ""}, {card:"Blank", value: 1
 let playerStatsBJ = {total: 0, notBust: true, myTurn: true, cardsDealt: 1, betOptsShown: false};
 let dealerCardsBJ = [{card:"Blank", value: 1, suit: ""}, {card:"Blank", value: 1, suit: ""}];
 let dealerStatsBJ = {total: 0, notBust: true, myTurn: false, cardsDealt: 1};
-let points = 100;
+let points = localStorage.getItem('PointseFjsr') ? parseInt(localStorage.getItem('PointseFjsr')) : 10000; 
 let bet = 0;
 const htmlPlayer = document.querySelector(".playerCards-js");
 const htmlDealer = document.querySelector(".dealerCards-js");
@@ -21,10 +21,12 @@ const RanksBJ = [
 const Suits = [
   "D", "H", "C", "S"
 ];
+updateScore();
 function updateScore() {
-document.querySelector('.scoreBoard-js').innerHTML = `$${points}`
+  document.querySelector('.scoreBoard-js').innerHTML = `$${points}`;
+  localStorage.setItem('PointseFjsr', points); 
+}
 
-};
 function guess(guess) {
   pickCard("dealer");
   if (dealerCardValue === playerCardValue) {
@@ -294,3 +296,46 @@ function endGame() {
   }
   showElement("resetBJ");
 };
+
+
+function spinSlots() {
+  const icons = ["&#8486;", "&#9730;", "&#9752;", "&#9762;"]; 
+  gamble(20);
+
+  const slotElements = [
+    document.querySelector(".slot1-js"),
+    document.querySelector(".slot2-js"),
+    document.querySelector(".slot3-js"),
+  ];
+
+  let intervals = [];
+  let results = [];
+
+  
+  function shuffleSlot(slotElement, index) {
+    intervals[index] = setInterval(() => {
+      const randomIcon = icons[Math.floor(Math.random() * icons.length)];
+      slotElement.innerHTML = randomIcon;
+    }, 100); 
+  }
+
+
+  slotElements.forEach((slot, index) => shuffleSlot(slot, index));
+
+  setTimeout(() => {
+    slotElements.forEach((slot, index) => {
+      clearInterval(intervals[index]); 
+      const finalIcon = icons[Math.floor(Math.random() * icons.length)];
+      slot.innerHTML = finalIcon; 
+      results[index] = finalIcon;
+    });
+
+    
+    if (results[0] === results[1] && results[1] === results[2]) {
+      console.log("Win!");
+      points += bet * 2;
+    } else {
+      console.log("Try again!");
+    }
+  }, 3000);
+}
