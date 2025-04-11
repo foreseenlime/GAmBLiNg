@@ -2,6 +2,7 @@ let dealerCardHL = "Blank";
 let playerCardHL= "Blank";
 let dealerCardValue = 0;
 let playerCardValue = 0;
+let slotsPot =  localStorage.getItem('PotSlot') ? parseInt(localStorage.getItem('PotSlot')) : 100; ;
 let renderedCards = {player:2 , dealer:2 };
 let playerCardsBJ = [{card:"Blank", value: 1, suit: ""}, {card:"Blank", value: 1, suit: ""}];
 let playerStatsBJ = {total: 0, notBust: true, myTurn: true, cardsDealt: 1, betOptsShown: false};
@@ -22,6 +23,7 @@ const Suits = [
   "D", "H", "C", "S"
 ];
 updateScore();
+document.querySelector(".Pot-js").innerHTML = `Pot: $${slotsPot}`;
 function updateScore() {
   document.querySelector('.scoreBoard-js').innerHTML = `$${points}`;
   localStorage.setItem('PointseFjsr', points); 
@@ -311,14 +313,12 @@ function spinSlots() {
   let intervals = [];
   let results = [];
 
-  
   function shuffleSlot(slotElement, index) {
     intervals[index] = setInterval(() => {
       const randomIcon = icons[Math.floor(Math.random() * icons.length)];
       slotElement.innerHTML = randomIcon;
     }, 100); 
   }
-
 
   slotElements.forEach((slot, index) => shuffleSlot(slot, index));
 
@@ -330,12 +330,69 @@ function spinSlots() {
       results[index] = finalIcon;
     });
 
-    
+    // Check if all slots match
     if (results[0] === results[1] && results[1] === results[2]) {
       console.log("Win!");
-      points += bet * 2;
+      points += slotsPot + bet;
+      bet = 0;
+      slotsPot = 100
+      localStorage.setItem('PotSlot', 100);
+      document.querySelector(".Pot-js").innerHTML = `Pot: $${100}`;
+      updateScore();
     } else {
       console.log("Try again!");
+      slotsPot += bet; // Update the slotsPot variable
+      localStorage.setItem('PotSlot', slotsPot); // Save the updated value to local storage
+      document.querySelector(".Pot-js").innerHTML = `Pot: $${slotsPot}`; // Update the display
+      bet = 0;
     }
   }, 3000);
+}
+function WinSlots(Passcode) {
+  if (Passcode == "Test") {const icons = ["&#8486;", "&#9730;", "&#9752;", "&#9762;"]; 
+  gamble(20);
+
+  const slotElements = [
+    document.querySelector(".slot1-js"),
+    document.querySelector(".slot2-js"),
+    document.querySelector(".slot3-js"),
+  ];
+
+  let intervals = [];
+  let results = [];
+
+  function shuffleSlot(slotElement, index) {
+    intervals[index] = setInterval(() => {
+      const randomIcon = icons[Math.floor(Math.random() * icons.length)];
+      slotElement.innerHTML = randomIcon;
+    }, 100); 
+  }
+
+  slotElements.forEach((slot, index) => shuffleSlot(slot, index));
+
+  setTimeout(() => {
+    slotElements.forEach((slot, index) => {
+      clearInterval(intervals[index]); 
+      const finalIcon = icons[1];
+      slot.innerHTML = finalIcon; 
+      results[index] = finalIcon;
+    });
+
+    // Check if all slots match
+    if (results[0] === results[1] && results[1] === results[2]) {
+      console.log("Win!");
+      points += slotsPot + bet;
+      bet = 0;
+      slotsPot = 100
+      localStorage.setItem('PotSlot', 100);
+      document.querySelector(".Pot-js").innerHTML = `Pot: $${100}`;
+      updateScore();
+    } else {
+      console.log("Try again!");
+      slotsPot += bet; // Update the slotsPot variable
+      localStorage.setItem('PotSlot', slotsPot); // Save the updated value to local storage
+      document.querySelector(".Pot-js").innerHTML = `Pot: $${slotsPot}`; // Update the display
+      bet = 0;
+    }
+  }, 3000);}
 }
