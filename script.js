@@ -276,10 +276,22 @@ function stand(player) {
   }
 
 }
+function RevealDealerCard() {
+  cardsHTML.dealer = ``;
+  renderedCards.dealer = 0;
+  for(let i = renderedCards.dealer; i < dealerCardsBJ.length; i++) {
+    cardsHTML.dealer = cardsHTML.dealer.concat(`<img class="Card" src="${dealerCardsBJ[i].suit}/${dealerCardsBJ[i].card}.png">`);
+    renderedCards.dealer ++;
+    console.log("This Part Worked");
+  };
+  document.querySelector(".dealerCards-js").innerHTML = cardsHTML.dealer;
+}
+
 function endGame() {
   console.log("Game Over")
   checkCards("player1");
   checkCards("dealer");
+  RevealDealerCard();
   if (playerStatsBJ.notBust) {
     if (!dealerStatsBJ.notBust) {
       showElement("win-js");
