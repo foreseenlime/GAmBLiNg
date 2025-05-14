@@ -175,10 +175,15 @@ function correctGuess() {
   points += bet * 2; 
   bet = 0; 
   updateScore();
+  showElement('reset-btn-js');
 };
 function incorrectGuess() {
   bet = 0; // Ensure bet resets so it doesn't get re-used incorrectly
   updateScore();
+  showElement('reset-btn-js');
+  hideElement('gamble-btns');
+  hideElement('guess-btns');
+  
 };
 function gamble(amount) {
   if (amount > 0 && amount <= points) {
