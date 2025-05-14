@@ -276,22 +276,10 @@ function stand(player) {
   }
 
 }
-function RevealDealerCard() {
-  cardsHTML.dealer = ``;
-  renderedCards.dealer = 0;
-  for(let i = renderedCards.dealer; i < dealerCardsBJ.length; i++) {
-    cardsHTML.dealer = cardsHTML.dealer.concat(`<img class="Card" src="${dealerCardsBJ[i].suit}/${dealerCardsBJ[i].card}.png">`);
-    renderedCards.dealer ++;
-    console.log("This Part Worked");
-  };
-  document.querySelector(".dealerCards-js").innerHTML = cardsHTML.dealer;
-}
-
 function endGame() {
   console.log("Game Over")
   checkCards("player1");
   checkCards("dealer");
-  RevealDealerCard();
   if (playerStatsBJ.notBust) {
     if (!dealerStatsBJ.notBust) {
       showElement("win-js");
@@ -315,7 +303,7 @@ function endGame() {
 function spinSlots() {
   const icons = ["&#8486;", "&#9730;", "&#9752;", "&#9762;"]; 
   gamble(20);
-
+  hideElement('spin');
   const slotElements = [
     document.querySelector(".slot1-js"),
     document.querySelector(".slot2-js"),
@@ -358,6 +346,7 @@ function spinSlots() {
       document.querySelector(".Pot-js").innerHTML = `Pot: $${slotsPot}`; // Update the display
       bet = 0;
     }
+    showElement('spin');
   }, 3000);
 }
 function WinSlots(Passcode) {
